@@ -23,16 +23,19 @@ endfunction
 
 function! Copy_to_clipboard()
 	let text = s:get_visual_selection()
-	echo "| " . text . "| has been copy to clipboard"  
+	" echo "| " . text . " | has been copy to clipboard"  
 	call system('pbcopy', text)
 	return
 endfunction
 
 function! Paste_from_clipboard()
   let text = s:read_clipboard_mac()
-  echo "copy |" . text . " | from clipboard"
+  " echo "copy | " . text . " | from clipboard"
   let result = setreg("", text)
 endfunction
 
 vnoremap <C-c> :call Copy_to_clipboard()<RETURN>
-noremap <C-v> :call Paste_from_clipboard()<RETURN> p<cr>
+noremap <C-v> :call Paste_from_clipboard()<RETURN>p
+
+
+inoremap ( ()<left>

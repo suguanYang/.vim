@@ -10,7 +10,6 @@ silent! runtime bundles.vim
 "  General
 "  ---------------------------------------------------------------------------
 
-filetype plugin indent on     
 let mapleader = ","
 let g:mapleader = ","
 set modelines=0
@@ -48,7 +47,7 @@ set undofile
 " Auto adjust window sizes when they become current
 set winwidth=84
 set winheight=5
-set winminheight=5
+" set winminheight=5
 set winheight=999
 
 colorscheme gruvbox
@@ -65,6 +64,7 @@ set tabstop=2
 set shiftwidth=2
 set softtabstop=2
 set expandtab
+filetype plugin indent on     
 
 set nowrap
 set textwidth=79
@@ -142,7 +142,7 @@ imap jj <ESC>
 set grepprg=ack
 
 " ,a to Ack (search in files)
-nnoremap <leader>a :Ack 
+nnoremap <leader>a :Ack --ignore-dir node_modules
 
 " Ack settings: https://github.com/krisleech/vimfiles/wiki/Make-ack-ignore-files
 
@@ -348,3 +348,7 @@ endif
 
 " When vimrc, either directly or via symlink, is edited, automatically reload it
  autocmd! bufwritepost .vimrc source %
+
+
+
+map <leader>j :FZF<cr>

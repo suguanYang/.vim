@@ -46,7 +46,7 @@ Bundle "tomtom/tlib_vim"
 Bundle "honza/vim-snippets"
 Bundle "garbas/vim-snipmate"
 Bundle 'morhetz/gruvbox'
-
-filetype plugin indent on     " and turn it back on!
+Plugin 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plugin 'fatih/vim-go'
 
 runtime macros/matchit.vim    
